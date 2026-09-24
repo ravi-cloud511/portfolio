@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ravi // DevOps - Cloud Infrastructure &amp; Mentorship Portfolio</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary": "#00354a",
+            "surface-dim": "#0e1321",
+            "tertiary-container": "#7bb4ff",
+            "on-tertiary-container": "#00457e",
+            "on-secondary-container": "#e6ecff",
+            "inverse-on-surface": "#2b303f",
+            "primary-container": "#38bdf8",
+            "on-primary-container": "#004965",
+            "on-error-container": "#ffdad6",
+            "primary-fixed": "#c4e7ff",
+            "on-primary-fixed": "#001e2c",
+            "on-tertiary": "#00315d",
+            "error-container": "#93000a",
+            "primary-fixed-dim": "#7bd0ff",
+            "on-secondary": "#002e6a",
+            "background": "#0e1321",
+            "tertiary-fixed": "#d4e3ff",
+            "surface-variant": "#303444",
+            "on-surface": "#dee2f6",
+            "on-surface-variant": "#bdc8d1",
+            "surface-container": "#1a1f2e",
+            "outline": "#87929a",
+            "surface-container-highest": "#303444",
+            "tertiary-fixed-dim": "#a4c9ff",
+            "on-tertiary-fixed": "#001c39",
+            "secondary": "#adc6ff",
+            "tertiary": "#afcfff",
+            "secondary-fixed-dim": "#adc6ff",
+            "surface": "#0e1321",
+            "inverse-primary": "#00668a",
+            "on-secondary-fixed-variant": "#004395",
+            "inverse-surface": "#dee2f6",
+            "surface-tint": "#7bd0ff",
+            "surface-container-low": "#161b2a",
+            "on-primary-fixed-variant": "#004c69",
+            "error": "#ffb4ab",
+            "on-background": "#dee2f6",
+            "secondary-fixed": "#d8e2ff",
+            "on-secondary-fixed": "#001a42",
+            "primary": "#8ed5ff",
+            "surface-bright": "#343948",
+            "outline-variant": "#3e484f",
+            "on-error": "#690005",
+            "on-tertiary-fixed-variant": "#004883",
+            "surface-container-lowest": "#090e1c",
+            "secondary-container": "#0566d9",
+            "surface-container-high": "#252a39"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "margin": "3rem",
+            "space-xl": "2.5rem",
+            "margin-mobile": "1.25rem",
+            "space-md": "1rem",
+            "gutter": "1.5rem",
+            "space-2xl": "4rem",
+            "space-lg": "1.5rem",
+            "gutter-mobile": "1rem"
+          },
+          "fontFamily": {
+            "body-md": ["Inter"],
+            "body-lg": ["Inter"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "code-inline": ["JetBrains Mono"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "display-xl": ["Plus Jakarta Sans"],
+            "title-md": ["Plus Jakarta Sans"],
+            "label-sm": ["JetBrains Mono"],
+            "label-md": ["JetBrains Mono"],
+            "body-sm": ["Inter"],
+            "display-xl-mobile": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-md": ["15px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "headline-sm": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "code-inline": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+            "headline-md": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "display-xl": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "title-md": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "500" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "600" }],
+            "body-sm": ["13px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "display-xl-mobile": ["38px", { "lineHeight": "46px", "letterSpacing": "-0.025em", "fontWeight": "700" }],
+            "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.025em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-surface-container-lowest text-on-surface font-body-md selection:bg-primary selection:text-on-primary min-h-screen relative overflow-x-hidden antialiased">
+<!-- Ambient Telemetry Lighting Effects -->
+<div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+<div class="absolute -top-40 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
+<div class="absolute top-1/3 -right-20 w-80 h-80 bg-secondary-container/15 rounded-full blur-3xl"></div>
+<div class="absolute bottom-10 left-10 w-96 h-96 bg-primary-container/5 rounded-full blur-3xl"></div>
+<!-- Fine Grid Background -->
+<div class="absolute inset-0 opacity-[0.03] [background-image:linear-gradient(to_right,#8ed5ff_1px,transparent_1px),linear-gradient(to_bottom,#8ed5ff_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+</div>
+<!-- Shared Component: TopNavBar -->
+<header class="docked full-width top-0 sticky z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center w-full px-6 md:px-12 max-w-7xl mx-auto h-16">
+<!-- Logo Anchor -->
+<a class="text-title-md font-headline-sm font-bold text-primary dark:text-primary tracking-tight flex items-center gap-2 group" href="#hero">
+<span class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse shadow-[0_0_10px_#8ed5ff]"></span>
+<span>Ravi // DevOps</span>
+</a>
+<!-- Desktop Navigation Links -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-primary dark:text-primary font-semibold border-b-2 border-primary pb-1 font-label-md text-label-md" href="#hero">Hero</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-medium hover:text-primary dark:hover:text-primary transition-colors font-label-md text-label-md" href="#skills">Skills</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-medium hover:text-primary dark:hover:text-primary transition-colors font-label-md text-label-md" href="#mentorship">Mentorship</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-medium hover:text-primary dark:hover:text-primary transition-colors font-label-md text-label-md" href="#projects">Projects</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-medium hover:text-primary dark:hover:text-primary transition-colors font-label-md text-label-md" href="#reviews">Reviews</a>
+</nav>
+<!-- Trailing Action Cluster -->
+<div class="flex items-center gap-3">
+<div class="hidden sm:flex items-center gap-2 mr-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-title-md p-1.5 rounded-lg hover:bg-surface-container-high/40 hover:text-primary cursor-pointer transition-colors" data-icon="terminal">terminal</span>
+<span class="material-symbols-outlined text-title-md p-1.5 rounded-lg hover:bg-surface-container-high/40 hover:text-primary cursor-pointer transition-colors" data-icon="code">code</span>
+</div>
+<a class="inline-flex items-center justify-center px-4 py-2 rounded-xl bg-secondary-container text-on-secondary-container hover:bg-primary-container hover:text-on-primary-container font-label-md text-label-md font-semibold transition-all duration-200 border border-primary/30 shadow-[0_0_15px_rgba(56,189,248,0.25)] hover:shadow-[0_0_20px_rgba(56,189,248,0.4)] scale-95 hover:scale-100" href="#connect">
+          Book Session
+        </a>
+</div>
+</div>
+</header>
+<main class="relative z-10">
+<!-- HERO SECTION -->
+<section class="w-full max-w-7xl mx-auto px-6 md:px-12 pt-12 md:pt-20 pb-16 md:pb-24" id="hero">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+<!-- Left Introduction Column -->
+<div class="lg:col-span-7 flex flex-col items-start gap-6">
+<!-- Trust/Status Pill -->
+<div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-surface-container border border-outline-variant/40 shadow-sm backdrop-blur-sm">
+<span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+<span class="w-2 h-2 rounded-full bg-emerald-400 -ml-4.5"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant tracking-wider uppercase">Available for mentorship &amp; junior DevOps roles</span>
+</div>
+<!-- Headline -->
+<h1 class="font-headline-lg md:font-display-xl text-headline-lg-mobile md:text-display-xl text-on-surface tracking-tight font-bold">
+            DevOps &amp; Cloud Computing <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-container to-secondary">Enthusiast &amp; Mentor</span>
+</h1>
+<!-- Subtitle -->
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+            Building automated, resilient infrastructure while empowering aspiring engineers. Documenting my journey, learning in public, and guiding driven students step-by-step.
+          </p>
+<!-- Core Value Metrics Ticker -->
+<div class="grid grid-cols-3 gap-4 py-2 w-full max-w-lg border-y border-outline-variant/30">
+<div>
+<div class="font-headline-sm text-headline-sm font-bold text-primary">5+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Students Guided</div>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface">1:1</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Focused Mentorship</div>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm font-bold text-emerald-400">100%</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Hands-On Code</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-wrap items-center gap-4 pt-2 w-full sm:w-auto">
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-secondary-container text-on-secondary-container hover:bg-primary-container hover:text-on-primary-container font-headline-sm text-body-md font-semibold border border-primary/40 shadow-[0_0_20px_rgba(56,189,248,0.3)] transition-all duration-200" href="#reviews">
+<span>Explore Student Reviews</span>
+<span class="material-symbols-outlined text-body-lg" data-icon="arrow_forward">arrow_forward</span>
+</a>
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-surface-container-low text-on-surface hover:text-primary hover:border-primary/50 border border-outline-variant/50 font-headline-sm text-body-md font-semibold transition-all duration-200" href="#skills">
+<span class="material-symbols-outlined text-body-lg text-primary" data-icon="map">map</span>
+<span>View DevOps Roadmap</span>
+</a>
+</div>
+<!-- Console Teaser snippet -->
+<div class="w-full max-w-xl mt-2 rounded-xl bg-surface-container-lowest border border-outline-variant/40 p-3 font-code-inline text-code-inline text-on-surface-variant flex items-center justify-between">
+<div class="flex items-center gap-2 overflow-x-auto whitespace-nowrap">
+<span class="text-primary">$</span>
+<span class="text-on-surface">ansible-playbook -i production deploy_career.yml</span>
+</div>
+<span class="inline-block px-2 py-0.5 text-label-sm font-label-sm rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">SUCCESS</span>
+</div>
+</div>
+<!-- Right Profile Image & Telemetry Floating Badges -->
+<div class="lg:col-span-5 flex justify-center relative">
+<div class="relative w-72 sm:w-80 md:w-96 aspect-[0.78] max-w-full">
+<!-- Neon Cyan Glow Backdrop -->
+<div class="absolute -inset-2 rounded-3xl bg-gradient-to-tr from-primary/30 via-primary-container/20 to-secondary-container/40 blur-xl opacity-80 animate-pulse"></div>
+<!-- Image Card Shell -->
+<div class="relative h-full w-full rounded-2xl overflow-hidden border-2 border-primary-container/40 shadow-[0_0_30px_rgba(56,189,248,0.25)] bg-surface-container-low">
+<!-- MUST use exact uploaded image IMAGE_3 as authentic profile photo -->
+<img alt="Ravi DevOps Mentor Profile Avatar" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfxls4CCZC9I8BC8On5PVtthwYlb4WDv80GVjr2iabbjvT7Xtsihbsfn0zeBFCJ7WrjdjAHTpbKLQzLHo6H3O6uBi9sue30AAlkwpbEAadZgCCSnatDb6yTFZbhE09MGAzdt7imR607hu1UqCWhwPaTFEarhnfgo5gN7SUneuU1vrGbcUMQkXuCnYji0y2UxWhzmHptvI5pjct7DLiGuITch0t4xvSMUiEg9rU2MhNSTBOCF781GTKan78i02TKaqeYnk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-transparent to-transparent"></div>
+<!-- Bottom Inner Tag inside photo -->
+<div class="absolute bottom-4 left-4 right-4 p-3 rounded-xl bg-surface-container-high/80 backdrop-blur-md border border-outline-variant/40 flex items-center justify-between">
+<div>
+<h4 class="font-headline-sm text-body-md font-bold text-on-surface">Ravi</h4>
+<p class="font-label-sm text-label-sm text-primary">Cloud &amp; Automation Engineer</p>
+</div>
+<div class="flex items-center gap-1 bg-emerald-500/20 text-emerald-400 px-2 py-1 rounded border border-emerald-500/30 text-label-sm font-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Active
+                </div>
+</div>
+</div>
+<!-- Floating Tech Badge 1: Top Left -->
+<div class="absolute -top-4 -left-6 hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-xl bg-surface-container-high/90 backdrop-blur-md border border-outline-variant/60 shadow-lg shadow-black/40">
+<span class="material-symbols-outlined text-primary text-title-md" data-icon="deployed_code">deployed_code</span>
+<div class="text-left">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">Infrastructure</p>
+<p class="font-headline-sm text-body-sm font-bold text-on-surface">Docker &amp; K8s</p>
+</div>
+</div>
+<!-- Floating Tech Badge 2: Right Middle -->
+<div class="absolute top-1/2 -right-8 -translate-y-1/2 hidden sm:flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-surface-container-high/90 backdrop-blur-md border border-outline-variant/60 shadow-lg shadow-black/40">
+<span class="material-symbols-outlined text-primary-container text-title-md" data-icon="cloud">cloud</span>
+<div class="text-left">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">Telemetry</p>
+<p class="font-headline-sm text-body-sm font-bold text-on-surface">AWS Cloud</p>
+</div>
+</div>
+<!-- Floating Tech Badge 3: Bottom Left -->
+<div class="absolute -bottom-5 -left-4 hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-xl bg-surface-container-high/90 backdrop-blur-md border border-outline-variant/60 shadow-lg shadow-black/40">
+<span class="material-symbols-outlined text-secondary text-title-md" data-icon="alt_route">alt_route</span>
+<div class="text-left">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">Automation</p>
+<p class="font-headline-sm text-body-sm font-bold text-on-surface">CI/CD Pipelines</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ABOUT & PHILOSOPHY SECTION -->
+<section class="w-full border-y border-outline-variant/20 bg-surface-container-low/40 py-16">
+<div class="max-w-7xl mx-auto px-6 md:px-12">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+<div class="md:col-span-4">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest block mb-2">Architectural Philosophy</span>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">
+              Learning in public, engineering with rigor.
+            </h2>
+</div>
+<div class="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+<!-- Philosophy Card 1 -->
+<div class="p-6 rounded-2xl bg-surface-container/60 border border-outline-variant/30 hover:border-primary/40 transition-colors">
+<div class="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary mb-4">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+</div>
+<h3 class="font-headline-sm text-title-md text-on-surface font-bold mb-2">Learning by Doing</h3>
+<p class="font-body-md text-body-sm text-on-surface-variant leading-relaxed">
+                Theory falls flat without practical deployment. I mentor students through real terminal labs, debugging live breakages, and configuring immutable architectures.
+              </p>
+</div>
+<!-- Philosophy Card 2 -->
+<div class="p-6 rounded-2xl bg-surface-container/60 border border-outline-variant/30 hover:border-primary/40 transition-colors">
+<div class="w-10 h-10 rounded-xl bg-secondary/10 border border-secondary/20 flex items-center justify-center text-secondary mb-4">
+<span class="material-symbols-outlined" data-icon="route">route</span>
+</div>
+<h3 class="font-headline-sm text-title-md text-on-surface font-bold mb-2">Digestible Roadmaps</h3>
+<p class="font-body-md text-body-sm text-on-surface-variant leading-relaxed">
+                Breaking down the overwhelming cloud landscape into concise, manageable phases so early engineers never hit roadblock exhaustion or analysis paralysis.
+              </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SKILLS & TOOLCHAIN SECTION -->
+<section class="w-full max-w-7xl mx-auto px-6 md:px-12 py-20" id="skills">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest block mb-2">Core Tech Stack</span>
+<h2 class="font-headline-lg text-headline-md md:text-headline-lg text-on-surface font-bold">Skills &amp; Toolchain</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+          A focused, modern infrastructure toolkit curated for production reliability, continuous integration, and cloud-native workloads.
+        </p>
+</div>
+<!-- Interactive Bento Tech Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+<!-- Skill 1: Linux -->
+<div class="group p-5 rounded-2xl bg-surface-container-low border border-outline-variant/30 hover:border-primary-container/60 hover:bg-surface-container transition-all duration-300">
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-primary text-headline-sm" data-icon="terminal">terminal</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">Core Foundation</span>
+</div>
+<h3 class="font-headline-sm text-title-md text-on-surface font-bold mb-1">Linux Kernel &amp; CLI</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Bash automation, permissions, systemd, process isolation &amp; troubleshooting.</p>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-primary">
+<span>Ubuntu</span> • <span>RHEL</span> • <span>Shell Scripting</span>
+</div>
+</div>
+<!-- Skill 2: Git & GitHub -->
+<div class="group p-5 rounded-2xl bg-surface-container-low border border-outline-variant/30 hover:border-primary-container/60 hover:bg-surface-container transition-all duration-300">
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-secondary text-headline-sm" data-icon="commit">commit</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">VCS</span>
+</div>
+<h3 class="font-headline-sm text-title-md text-on-surface font-bold mb-1">Git &amp; GitHub</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Branching strategies, GitOps workflows, PR governance &amp; code reviews.</p>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-primary">
+<span>Trunk-Based</span> • <span>Submodules</span> • <span>Hooks</span>
+</div>
+</div>
+<!-- Skill 3: Docker -->
+<div class="group p-5 rounded-2xl bg-surface-container-low border border-outline-variant/30 hover:border-primary-container/60 hover:bg-surface-container transition-all duration-300">
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-primary-container text-headline-sm" data-icon="box">box</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">Containers</span>
+</div>
+<h3 class="font-headline-sm text-title-md text-on-surface font-bold mb-1">Docker Containers</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Multi-stage Dockerfiles, image layer optimization &amp; multi-container Compose.</p>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-primary">
+<span>Multi-Stage</span> • <span>Compose</span> • <span>Hardening</span>
+</div>
+</div>
+<!-- Skill 4: Kubernetes -->
+<div class="group p-5 rounded-2xl bg-surface-container-low border border-outline-variant/30 hover:border-primary-container/60 hover:bg-surface-container transition-all duration-300">
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-primary text-headline-sm" data-icon="hub">hub</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">Orchestration</span>
+</div>
+<h3 class="font-headline-sm text-title-md text-on-surface font-bold mb-1">Kubernetes (K8s)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Pods, Deployments, Services, ConfigMaps, Ingress controllers &amp; Helm charts.</p>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-primary">
+<span>Cluster Ops</span> • <span>Helm</span> • <span>Ingress</span>
+</div>
+</div>
+<!-- Skill 5: CI/CD -->
+<div class="group p-5 rounded-2xl bg-surface-container-low border border-outline-variant/30 hover:border-primary-container/60 hover:bg-surface-container transition-all duration-300">
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-secondary text-headline-sm" data-icon="reorder">reorder</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">Pipelines</span>
+</div>
+<h3 class="font-headline-sm text-title-md text-on-surface font-bold mb-1">Jenkins &amp; Actions</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Declarative pipelines, automated unit testing, linting gates &amp; cloud deploy.</p>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-primary">
+<span>GitHub Actions</span> • <span>Jenkinsfile</span> • <span>Webhooks</span>
+</div>
+</div>
+<!-- Skill 6: AWS Cloud -->
+<div class="group p-5 rounded-2xl bg-surface-container-low border border-outline-variant/30 hover:border-primary-container/60 hover:bg-surface-container transition-all duration-300">
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-primary-container text-headline-sm" data-icon="cloud_queue">cloud_queue</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">Cloud Provider</span>
+</div>
+<h3 class="font-headline-sm text-title-md text-on-surface font-bold mb-1">AWS Architecture</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Compute (EC2), Object Storage (S3), Security (IAM), and Networking (VPC).</p>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-primary">
+<span>EC2</span> • <span>S3</span> • <span>IAM</span> • <span>VPC</span>
+</div>
+</div>
+<!-- Skill 7: Terraform -->
+<div class="group p-5 rounded-2xl bg-surface-container-low border border-outline-variant/30 hover:border-primary-container/60 hover:bg-surface-container transition-all duration-300">
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-secondary text-headline-sm" data-icon="construction">construction</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">IaC</span>
+</div>
+<h3 class="font-headline-sm text-title-md text-on-surface font-bold mb-1">Terraform</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">HCL infrastructure manifests, state management, modules, and DRY topology.</p>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-primary">
+<span>HCL</span> • <span>Remote State</span> • <span>Modules</span>
+</div>
+</div>
+<!-- Skill 8: Observability -->
+<div class="group p-5 rounded-2xl bg-surface-container-low border border-outline-variant/30 hover:border-primary-container/60 hover:bg-surface-container transition-all duration-300">
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-primary text-headline-sm" data-icon="monitoring">monitoring</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">Observability</span>
+</div>
+<h3 class="font-headline-sm text-title-md text-on-surface font-bold mb-1">Prometheus &amp; Grafana</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Node exporter setup, PromQL queries, alerting rules, and dynamic dashboards.</p>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-primary">
+<span>Metrics</span> • <span>Alertmanager</span> • <span>Dashboards</span>
+</div>
+</div>
+</div>
+</section>
+<!-- MENTORSHIP JOURNEY / ROADMAP -->
+<section class="w-full bg-surface-container-low/30 border-y border-outline-variant/20 py-20" id="mentorship">
+<div class="max-w-7xl mx-auto px-6 md:px-12">
+<div class="text-center max-w-2xl mx-auto mb-16">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest block mb-2">Curated Pathway</span>
+<h2 class="font-headline-lg text-headline-md md:text-headline-lg text-on-surface font-bold">The DevOps Mentorship Track</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-3">
+            How I guide each student from fundamental operating system internals to managing production workloads.
+          </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
+<!-- Step 1 -->
+<div class="p-6 rounded-2xl bg-surface-container border border-outline-variant/30 relative">
+<span class="font-label-sm text-label-sm font-bold text-primary mb-2 block">PHASE 01</span>
+<h4 class="font-headline-sm text-title-md text-on-surface font-bold mb-2">Linux &amp; Git Foundations</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Mastering the command line, package managers, network routing, and collaborative version control.</p>
+</div>
+<!-- Step 2 -->
+<div class="p-6 rounded-2xl bg-surface-container border border-outline-variant/30 relative">
+<span class="font-label-sm text-label-sm font-bold text-primary mb-2 block">PHASE 02</span>
+<h4 class="font-headline-sm text-title-md text-on-surface font-bold mb-2">Docker &amp; Containers</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Packaging microservices, writing production-grade Dockerfiles, and persistent volumes.</p>
+</div>
+<!-- Step 3 -->
+<div class="p-6 rounded-2xl bg-surface-container border border-outline-variant/30 relative">
+<span class="font-label-sm text-label-sm font-bold text-primary mb-2 block">PHASE 03</span>
+<h4 class="font-headline-sm text-title-md text-on-surface font-bold mb-2">CI/CD &amp; Automation</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Constructing automated pipelines in GitHub Actions and Jenkins with automated testing.</p>
+</div>
+<!-- Step 4 -->
+<div class="p-6 rounded-2xl bg-surface-container border border-outline-variant/30 relative">
+<span class="font-label-sm text-label-sm font-bold text-primary mb-2 block">PHASE 04</span>
+<h4 class="font-headline-sm text-title-md text-on-surface font-bold mb-2">AWS Cloud &amp; K8s</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Deploying resilient architectures to AWS EC2 &amp; EKS with Terraform and Grafana observability.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- STUDENT TESTIMONIALS SECTION (CRITICAL SPECIFICATION) -->
+<section class="w-full max-w-7xl mx-auto px-6 md:px-12 py-20" id="reviews">
+<!-- Section Header with STRICT Statistic Pill -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+<div>
+<!-- STRICT CONSTRAINT: Strictly '5+ Students Guided' pill near header -->
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/30 text-primary font-label-md text-label-md mb-3">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span>5+ Students Guided</span>
+</div>
+<h2 class="font-headline-lg text-headline-md md:text-headline-lg text-on-surface font-bold">Student Reviews</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-1">Some words from students I’ve guided</p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container border border-outline-variant/30 max-w-md">
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Deliberately keeping cohort sizes small to provide authentic, direct 1:1 mentorship sessions, code reviews, and career guidance.
+          </p>
+</div>
+</div>
+<!-- EXACTLY 5 TESTIMONIAL CARDS -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-sky-500/50 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group backdrop-blur-md">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-primary text-headline-sm" data-icon="format_quote">format_quote</span>
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant border border-outline-variant/30">Guided on Linux &amp; CI/CD Roadmap</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic mb-6">
+              "Ravi explained Linux architecture and continuous delivery concepts with such clarity. His practical guidance helped me bridge the gap between knowing theory and actually running terminal commands with total confidence."
+            </p>
+</div>
+<div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+<div>
+<h4 class="font-headline-sm text-title-md font-bold text-on-surface">Student 01</h4>
+<p class="font-label-sm text-label-sm text-primary">DevOps Career Transition</p>
+</div>
+<span class="material-symbols-outlined text-emerald-400 text-body-lg" data-icon="verified">verified</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-sky-500/50 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group backdrop-blur-md">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-primary text-headline-sm" data-icon="format_quote">format_quote</span>
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant border border-outline-variant/30">Hands-on Docker &amp; AWS Mentorship</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic mb-6">
+              "The hands-on session on containerizing my web apps and deploying them to AWS EC2 cleared up months of confusion. Ravi patiently debugged my container networking issues step-by-step."
+            </p>
+</div>
+<div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+<div>
+<h4 class="font-headline-sm text-title-md font-bold text-on-surface">Student 02</h4>
+<p class="font-label-sm text-label-sm text-primary">Cloud &amp; Infrastructure Track</p>
+</div>
+<span class="material-symbols-outlined text-emerald-400 text-body-lg" data-icon="verified">verified</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-sky-500/50 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group backdrop-blur-md">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-primary text-headline-sm" data-icon="format_quote">format_quote</span>
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant border border-outline-variant/30">End-to-end Roadmap &amp; Interview Prep</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic mb-6">
+              "As a fresher overwhelmed by the sheer size of the DevOps roadmap, Ravi created a realistic milestone plan for me. His technical interview prep gave me the structure I was missing."
+            </p>
+</div>
+<div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+<div>
+<h4 class="font-headline-sm text-title-md font-bold text-on-surface">Student 03</h4>
+<p class="font-label-sm text-label-sm text-primary">Fresher to DevOps Engineer</p>
+</div>
+<span class="material-symbols-outlined text-emerald-400 text-body-lg" data-icon="verified">verified</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-sky-500/50 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group backdrop-blur-md">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-primary text-headline-sm" data-icon="format_quote">format_quote</span>
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant border border-outline-variant/30">Practical Projects &amp; Troubleshooting</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic mb-6">
+              "We didn’t just write YAML files—we diagnosed crash loops, tested self-healing in pods, and inspected ingress logs. The practical troubleshooting skill is what sets his mentoring apart."
+            </p>
+</div>
+<div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+<div>
+<h4 class="font-headline-sm text-title-md font-bold text-on-surface">Student 04</h4>
+<p class="font-label-sm text-label-sm text-primary">DevOps &amp; Kubernetes Aspirant</p>
+</div>
+<span class="material-symbols-outlined text-emerald-400 text-body-lg" data-icon="verified">verified</span>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-sky-500/50 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group backdrop-blur-md lg:col-span-2">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-primary text-headline-sm" data-icon="format_quote">format_quote</span>
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant border border-outline-variant/30">Infrastructure Mentorship</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic mb-6">
+              "His guidance on cloud computing primitives and infrastructure thinking was invaluable. He gives genuine, grounded feedback and truly cares about his mentees mastering the fundamentals."
+            </p>
+</div>
+<div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+<div>
+<h4 class="font-headline-sm text-title-md font-bold text-on-surface">Student 05</h4>
+<p class="font-label-sm text-label-sm text-primary">GCP / Cloud Engineer</p>
+</div>
+<span class="material-symbols-outlined text-emerald-400 text-body-lg" data-icon="verified">verified</span>
+</div>
+</div>
+</div>
+<!-- Verified Mentorship Gallery: Authentic WhatsApp Appreciation Previews -->
+<div class="mt-16 pt-12 border-t border-outline-variant/20">
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 gap-4">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-400" data-icon="chat">chat</span>
+<h3 class="font-headline-sm text-title-md font-bold text-on-surface">Verified Student Appreciation &amp; Chats</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Direct feedback and milestone confirmations received from mentored peers</p>
+</div>
+<span class="font-label-sm text-label-sm px-3 py-1 rounded-lg bg-surface-container border border-outline-variant/40 text-on-surface-variant">Real Mentorship Artifacts</span>
+</div>
+<!-- Screenshots Gallery Grid referencing available authentic WhatsApp images with tasteful privacy preview cards -->
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+<!-- Proof 1 -->
+<div class="group relative rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30 hover:border-primary/50 transition-all duration-300">
+<div class="aspect-[0.6] w-full overflow-hidden bg-surface-container-lowest">
+<img alt="WhatsApp feedback screenshot from Student 01" class="w-full h-full object-cover object-top opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMWou0w4cILbsF1CXwT6pVRIhREVZkX51NtUAayyKpiIS85CeLUGD98NekChHd0fsLiG4ULsGFLtIQQwxvgSF7VHnQoMyIumbSnHY8hAOodBaPim8HaLneeKBHreIziVuNP-LAZ5LbkXc6gMdPuR9Fpv2zC-6ocQZCmZek3ksy_tmS8WspbfjcJeBOpmSKJnAsz8pIO0-t8YqwLyOLbeElA4_wmfLYGPi3mf6id-bJCad6MqzbNopHBRNxbatjQeSgpa4"/>
+</div>
+<div class="p-2.5 bg-surface-container-high/90 backdrop-blur-sm border-t border-outline-variant/20">
+<p class="font-label-sm text-label-sm text-on-surface font-semibold truncate">Student 01 Chat</p>
+<p class="font-label-sm text-label-sm text-primary">CI/CD Feedback</p>
+</div>
+</div>
+<!-- Proof 2 -->
+<div class="group relative rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30 hover:border-primary/50 transition-all duration-300">
+<div class="aspect-[0.6] w-full overflow-hidden bg-surface-container-lowest">
+<img alt="WhatsApp appreciation screenshot from Student 02" class="w-full h-full object-cover object-top opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACSl3OHURp8T6cpDs9yCwH-PsB_vEWrvNmWyw4tQwNElzknmARNQolLJgaRICaAyGfciZ2ebgzJyzl3g3gmecAv7I7i7EwvCcybKmDffdRJ2n7tF4VDcxKrkurdn1GDshVpYVZsNWs4aFW6oE7DGVOizWt3iFmLcDaf6G5s5eGDJXeicAdUr8jIscsZD6FgL7Cb_e7MplsX9AKA5HLWLr6292thHK16wU6lL7S8KgtO76yXqLrSKB84Lbxc0ARxq6uHHg"/>
+</div>
+<div class="p-2.5 bg-surface-container-high/90 backdrop-blur-sm border-t border-outline-variant/20">
+<p class="font-label-sm text-label-sm text-on-surface font-semibold truncate">Student 02 Chat</p>
+<p class="font-label-sm text-label-sm text-primary">Docker Review</p>
+</div>
+</div>
+<!-- Proof 3 -->
+<div class="group relative rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30 hover:border-primary/50 transition-all duration-300">
+<div class="aspect-[0.6] w-full overflow-hidden bg-surface-container-lowest">
+<img alt="Student interaction screenshot showing project milestone" class="w-full h-full object-cover object-top opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsQktal-dHUIFOEWxD0o_QorMM44L4PlxpnvMTEqQ4Jg1jDS2nSAaiKkCBDkGTpRlh_y5Z1HMm4_kzGSZ-9OnyzuAJB4X0pluABOKzEwOsTKDQLMPT53zegVd7jvbGFUAxeHr3VDKwkokI_gBu1ZX1Z-gdflU9XhBuvxeaPHL2bvOewzFnHsrfyb0Vz6Nx6Qb6Ly2VqdioaN9kQL_B__OGg-4p4zNl5_y__yLP1aRiwfQ2CSDcZKF5NxdnV0APw_Lul9U"/>
+</div>
+<div class="p-2.5 bg-surface-container-high/90 backdrop-blur-sm border-t border-outline-variant/20">
+<p class="font-label-sm text-label-sm text-on-surface font-semibold truncate">Student 03 Chat</p>
+<p class="font-label-sm text-label-sm text-primary">Roadmap Clear</p>
+</div>
+</div>
+<!-- Proof 4 -->
+<div class="group relative rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30 hover:border-primary/50 transition-all duration-300">
+<div class="aspect-[0.6] w-full overflow-hidden bg-surface-container-lowest">
+<img alt="Appreciation message screenshot regarding mock interviews" class="w-full h-full object-cover object-top opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBboAcEJt7dXCogSnKTx_pA6D_r2k9a5fJFIW6IrdzELLQJ_e2us4S1IQR5P4VdLGEq-vKQdidF1oBHiKeTjP_N1MCESYJSRN-5nBn1r_EaZ5D3OvF1EVUoE5s7I06BDcmb2jajV1RmlDMrNvlTpZi_CEN7j9xsWBNBelMn8-vEL9n9AajTBm0wdW2xBOLjeG6DjtGM3DT5K8lDDLcsmCp3xUq1F-qH8gX-OsVlytCO5abiMJJ5EEJE-jw7idBVsZbjagM"/>
+</div>
+<div class="p-2.5 bg-surface-container-high/90 backdrop-blur-sm border-t border-outline-variant/20">
+<p class="font-label-sm text-label-sm text-on-surface font-semibold truncate">Student 04 Chat</p>
+<p class="font-label-sm text-label-sm text-primary">K8s Progress</p>
+</div>
+</div>
+<!-- Proof 5 -->
+<div class="group relative rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30 hover:border-primary/50 transition-all duration-300">
+<div class="aspect-[0.6] w-full overflow-hidden bg-surface-container-lowest">
+<img alt="Student feedback message regarding cloud infrastructure mentoring" class="w-full h-full object-cover object-top opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsbcdkPeOqtl4dbMbcGF0__lV_uXRFU4FZnKgeWU3ijPS7Vs3RkH3O9WzO4HHRPQz7La7qWk_ulIog2OJCdqhbOmQiMU9uvOyBzfIiQp2F6ZPs7cKOSOCa2xWrn3zZ78KdRVEb0FIJoJF2CEgjWYbVpU4askPzvleLpBiX9A6pPk3tNZw72rMYH91skyCElWnbxitsFFKzMN4oqdGDwtEgJJvOY_5MDowJz2FYFEb5spWlYFOxC-e7GbH5PTvc3LUwEwQ"/>
+</div>
+<div class="p-2.5 bg-surface-container-high/90 backdrop-blur-sm border-t border-outline-variant/20">
+<p class="font-label-sm text-label-sm text-on-surface font-semibold truncate">Student 05 Chat</p>
+<p class="font-label-sm text-label-sm text-primary">Session Thanks</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FEATURED PROJECTS SECTION -->
+<section class="w-full bg-surface-container-low/20 border-t border-outline-variant/20 py-20" id="projects">
+<div class="max-w-7xl mx-auto px-6 md:px-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest block mb-2">Automated Environments</span>
+<h2 class="font-headline-lg text-headline-md md:text-headline-lg text-on-surface font-bold">Featured Projects</h2>
+</div>
+<a class="inline-flex items-center gap-2 text-primary font-label-md text-label-md hover:underline" href="https://github.com" target="_blank">
+<span>Explore GitHub Terminal</span>
+<span class="material-symbols-outlined text-body-md" data-icon="open_in_new">open_in_new</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Project 1 -->
+<div class="p-7 rounded-2xl bg-surface-container border border-outline-variant/30 hover:border-primary/50 transition-all duration-300">
+<div class="flex items-center justify-between mb-4">
+<span class="font-code-inline text-code-inline text-primary bg-primary/10 px-2.5 py-1 rounded">iac-aws-vpc-cluster</span>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="terminal">terminal</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-2">Automated Multi-AZ VPC &amp; EKS Deployer</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+              Terraform infrastructure definition with private/public subnets, NAT Gateways, bastion host security groups, and automated Kubernetes node-group provisioning.
+            </p>
+<div class="flex flex-wrap gap-2 pt-2 border-t border-outline-variant/20">
+<span class="px-2.5 py-1 rounded text-label-sm font-label-sm bg-surface-container-high text-on-surface-variant">Terraform</span>
+<span class="px-2.5 py-1 rounded text-label-sm font-label-sm bg-surface-container-high text-on-surface-variant">AWS EKS</span>
+<span class="px-2.5 py-1 rounded text-label-sm font-label-sm bg-surface-container-high text-on-surface-variant">VPC Peering</span>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="p-7 rounded-2xl bg-surface-container border border-outline-variant/30 hover:border-primary/50 transition-all duration-300">
+<div class="flex items-center justify-between mb-4">
+<span class="font-code-inline text-code-inline text-secondary bg-secondary/10 px-2.5 py-1 rounded">cicd-zero-downtime</span>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="sync_alt">sync_alt</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-2">GitOps CI/CD with Blue/Green Canary Deployments</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+              End-to-end continuous integration pipeline using GitHub Actions, container vulnerability scans with Trivy, and zero-downtime rollouts monitored via Prometheus.
+            </p>
+<div class="flex flex-wrap gap-2 pt-2 border-t border-outline-variant/20">
+<span class="px-2.5 py-1 rounded text-label-sm font-label-sm bg-surface-container-high text-on-surface-variant">GitHub Actions</span>
+<span class="px-2.5 py-1 rounded text-label-sm font-label-sm bg-surface-container-high text-on-surface-variant">Docker</span>
+<span class="px-2.5 py-1 rounded text-label-sm font-label-sm bg-surface-container-high text-on-surface-variant">Prometheus</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CONNECT / GET IN TOUCH (BOOK SESSION) -->
+<section class="w-full max-w-7xl mx-auto px-6 md:px-12 py-20" id="connect">
+<div class="rounded-3xl bg-gradient-to-br from-surface-container to-surface-container-high border border-outline-variant/40 p-8 md:p-14 relative overflow-hidden">
+<div class="absolute -right-20 -bottom-20 w-80 h-80 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+<div class="lg:col-span-7">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest block mb-2">Ready to level up?</span>
+<h2 class="font-headline-lg text-headline-md md:text-headline-lg text-on-surface font-bold mb-4">
+              Book a 1:1 Mentorship Chat or Get in Touch
+            </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mb-6">
+              Whether you are preparing for your first DevOps role, troubleshooting a container build, or looking for dedicated roadmap guidance, let's connect.
+            </p>
+<div class="flex flex-wrap items-center gap-4 text-on-surface-variant font-label-md text-label-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-body-lg" data-icon="check_circle">check_circle</span>
+<span>Personalized 1:1 Feedback</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-body-lg" data-icon="check_circle">check_circle</span>
+<span>Practical Terminal Exercises</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5 flex flex-col gap-4">
+<a class="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-secondary-container text-on-secondary-container hover:bg-primary-container hover:text-on-primary-container font-headline-sm text-body-md font-bold shadow-[0_0_25px_rgba(56,189,248,0.3)] transition-all duration-200" href="mailto:ravi.devops@example.com">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span>Schedule 1:1 Call</span>
+</a>
+<a class="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-surface-container-lowest text-on-surface hover:text-primary hover:border-primary/50 border border-outline-variant/40 font-headline-sm text-body-md font-semibold transition-all duration-200" href="https://linkedin.com" target="_blank">
+<span class="material-symbols-outlined text-primary" data-icon="link">link</span>
+<span>Connect on LinkedIn</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Shared Component: Footer -->
+<footer class="docked full-width bottom bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant/20 flat no shadows">
+<div class="w-full py-12 px-6 md:px-12 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<!-- Brand & Copyright -->
+<div class="flex flex-col items-center md:items-start gap-1">
+<div class="text-headline-sm font-headline-sm font-bold text-on-surface dark:text-on-surface flex items-center gap-2">
+<span>Ravi // DevOps</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+          © 2024 Ravi. Cloud Infrastructure &amp; DevOps Mentorship. Built with rigor.
+        </p>
+</div>
+<!-- Footer Navigation Links -->
+<div class="flex flex-wrap justify-center items-center gap-6">
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary transition-colors text-label-sm font-label-sm focus:outline-none focus:ring-1 focus:ring-primary" href="#projects">Architecture Specs</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary transition-colors text-label-sm font-label-sm focus:outline-none focus:ring-1 focus:ring-primary" href="#mentorship">Roadmap</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary transition-colors text-label-sm font-label-sm focus:outline-none focus:ring-1 focus:ring-primary" href="https://github.com" target="_blank">GitHub Terminal</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary transition-colors text-label-sm font-label-sm focus:outline-none focus:ring-1 focus:ring-primary" href="https://linkedin.com" target="_blank">LinkedIn Profile</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary transition-colors text-label-sm font-label-sm focus:outline-none focus:ring-1 focus:ring-primary flex items-center gap-1.5" href="#hero">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+<span>System Status</span>
+</a>
+</div>
+</div>
+</footer>
+</body></html>
